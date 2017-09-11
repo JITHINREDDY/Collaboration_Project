@@ -13,7 +13,7 @@ public class Blog
 	@Id
 	private int blogId;
 	
-	private String bloName,blogContent,status,username;
+	private String blogName,blogContent,status,userid;
 	private int likes;
 	private Date createDate;
 	
@@ -24,11 +24,11 @@ public class Blog
 	public void setBlogId(int blogId) {
 		this.blogId = blogId;
 	}
-	public String getBloName() {
-		return bloName;
+	public String getBlogName() {
+		return blogName;
 	}
-	public void setBloName(String bloName) {
-		this.bloName = bloName;
+	public void setBlogName(String blogName) {
+		this.blogName = blogName;
 	}
 	public String getBlogContent() {
 		return blogContent;
@@ -42,11 +42,11 @@ public class Blog
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getUsername() {
-		return username;
+	public String getUserid() {
+		return userid;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	public int getLikes() {
 		return likes;
@@ -60,9 +60,5 @@ public class Blog
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-	
-	
-	
-	
 	
 }

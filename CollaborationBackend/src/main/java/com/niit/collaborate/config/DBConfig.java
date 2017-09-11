@@ -23,18 +23,21 @@ import com.niit.collaborate.model.Blog;
 public class DBConfig {
 
 	
-	//1.Create Datasource
+	//1 creat datasource
 	public DataSource getOracleDataSource()
 	{
 		DriverManagerDataSource driverManagerDataSource=new DriverManagerDataSource();
-		driverManagerDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver"); // link
-		driverManagerDataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE"); //default port no is 1521 for oracle 
+		driverManagerDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		driverManagerDataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
 		driverManagerDataSource.setUsername("hr");
 		driverManagerDataSource.setPassword("hr");
-		return driverManagerDataSource;
+		
+		return driverManagerDataSource;		
 	}
 	
-	//2.creating hibernate properties... used by LocalSessionFactory
+	
+	
+	//2creating hibernate properties
 	public Properties getHibernateProperties()
 	{
 		Properties properties=new Properties();
@@ -44,9 +47,10 @@ public class DBConfig {
 		return properties;
 	}
 	
-	//3. creating the sessionfactory bean using localsessionfactory
+	
+	//3 creating local session factory builder
 	@Bean
-	public SessionFactory getsessionFactory()
+	public SessionFactory getSessionFactory()
 	{
 		LocalSessionFactoryBuilder localSessionFactoryBuilder=new LocalSessionFactoryBuilder(getOracleDataSource());
 		localSessionFactoryBuilder.addProperties(getHibernateProperties());
@@ -55,23 +59,24 @@ public class DBConfig {
 		return localSessionFactoryBuilder.buildSessionFactory();
 	}
 	
+	
 	//4. HibernateTransaction Bean
 	
-	@Bean
-	public HibernateTransactionManager getHibernateTransactionMangaer(SessionFactory sessionFactory)
-	{
-		return new HibernateTransactionManager(sessionFactory);
-	}
+		@Bean
+		public HibernateTransactionManager getHibernateTransactionMangaer(SessionFactory sessionFactory)
+		{
+			return new HibernateTransactionManager(sessionFactory);
+		}
 
-	//5. appl. specifi DAO bean
-	
-	@Bean
-	public BlogDAO getBlogDAO(SessionFactory sessionFactory)
-	{
+		//5. appl. specifi DAO bean
 		
-		return new BlogDAOImpl(sessionFactory);
+		@Bean
+		public BlogDAO getBlogDAO(SessionFactory sessionFactory)
+		{
+			
+			return new BlogDAOImpl(sessionFactory);
+		}
+		
+		
+		
 	}
-	
-	
-	
-}
