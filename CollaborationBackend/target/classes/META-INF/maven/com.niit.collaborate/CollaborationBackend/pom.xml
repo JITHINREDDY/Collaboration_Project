@@ -59,6 +59,8 @@
     <version>5.2.6.Final</version>
 </dependency>
 
+
+
  <dependency>
 	<groupId>com.oracle</groupId>
 	<artifactId>ojdbc6</artifactId>
