@@ -59,15 +59,18 @@
     <version>5.2.6.Final</version>
 </dependency>
 
-
+<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+<dependency>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    <version>1.2</version>
+</dependency>
 
  <dependency>
 	<groupId>com.oracle</groupId>
 	<artifactId>ojdbc6</artifactId>
 	<version>11.2.0</version>
 </dependency>
-
-
 
     <dependency>
       <groupId>junit</groupId>
@@ -76,9 +79,7 @@
       <scope>test</scope>
     </dependency>
 
-  </dependencies>
-  
-  
+  </dependencies>  
   <build>
   <plugins>
 			<plugin>
@@ -91,7 +92,6 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-		</plugins>
-		</build>
+	</plugins>
+	</build>
 </project>

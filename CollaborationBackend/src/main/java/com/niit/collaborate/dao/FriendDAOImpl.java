@@ -5,70 +5,57 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.collaborate.model.Blog;
-
-@Repository("blogDAO")
-public class BlogDAOImpl implements BlogDAO 
+import com.niit.collaborate.model.Friend;
+@Repository("friendDAO")
+@EnableTransactionManagement
+public class FriendDAOImpl  implements FriendDAO
 {
-	
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	public BlogDAOImpl(SessionFactory sessionFactory)
+	public FriendDAOImpl(SessionFactory sessionFactory)
 	{
 		this.sessionFactory=sessionFactory;
 	}
+
+	@Override
+	public boolean createFriend(Friend friend) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Friend getFriend(int friendId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Friend> getFriends() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean approveFriend(Friend friend) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean editFriend(int friendid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteFriend(int friendId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+		
 	
-	@Transactional
-	@Override
-	public boolean createBlog(Blog blog) 
-	{
-		
-		try
-		{
-		sessionFactory.getCurrentSession().saveOrUpdate(blog);
-		System.out.println("Insertion successful");
-		return true;
-		}
-		
-		catch(Exception e)
-		{
-		System.out.println("Exception Arised:"+e);
-		return false;
-		}
-		
-	}
-
-	@Override
-	public Blog getBlog(int blogId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Blog> getBlogs() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean approveBlog(Blog blog) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean editBlog(int blogid) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean deleteBlog(int blogId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

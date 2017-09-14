@@ -5,30 +5,35 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.collaborate.model.Blog;
+import com.niit.collaborate.model.ForumComment;
 
-@Repository("blogDAO")
-public class BlogDAOImpl implements BlogDAO 
+@Repository("forumcommentDAO")
+@EnableTransactionManagement
+public class ForumCommentDAOImpl implements ForumCommentDAO 
 {
-	
+
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	public BlogDAOImpl(SessionFactory sessionFactory)
+	public ForumCommentDAOImpl(SessionFactory sessionFactory)
 	{
 		this.sessionFactory=sessionFactory;
 	}
-	
-	@Transactional
+
+	@Transactional	
 	@Override
-	public boolean createBlog(Blog blog) 
+	public boolean createForumComment(ForumComment forumcomment) 
 	{
+	
+		// TODO Auto-generated method stub
+		
 		
 		try
 		{
-		sessionFactory.getCurrentSession().saveOrUpdate(blog);
+		sessionFactory.getCurrentSession().saveOrUpdate(forumcomment);
 		System.out.println("Insertion successful");
 		return true;
 		}
@@ -38,37 +43,38 @@ public class BlogDAOImpl implements BlogDAO
 		System.out.println("Exception Arised:"+e);
 		return false;
 		}
+	}
+	
+	@Override
+	public ForumComment getForumComment(int forumcommentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ForumComment> getForumComments() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean approveForumComment(ForumComment forumcomment) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean editForumComment(int forumcommentid) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteForumComment(int forumcommentId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 		
-	}
-
-	@Override
-	public Blog getBlog(int blogId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Blog> getBlogs() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean approveBlog(Blog blog) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean editBlog(int blogid) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean deleteBlog(int blogId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
 }

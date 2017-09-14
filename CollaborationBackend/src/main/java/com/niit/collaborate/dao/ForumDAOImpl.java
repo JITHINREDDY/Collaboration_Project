@@ -4,31 +4,28 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.collaborate.model.Blog;
+import com.niit.collaborate.model.Forum;
 
-@Repository("blogDAO")
-public class BlogDAOImpl implements BlogDAO 
+public class ForumDAOImpl implements ForumDAO
 {
-	
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	public BlogDAOImpl(SessionFactory sessionFactory)
+	public ForumDAOImpl(SessionFactory sessionFactory)
 	{
 		this.sessionFactory=sessionFactory;
 	}
-	
+
 	@Transactional
 	@Override
-	public boolean createBlog(Blog blog) 
-	{
+	public boolean createForum(Forum forum) {
 		
+		// TODO Auto-generated method stub
 		try
 		{
-		sessionFactory.getCurrentSession().saveOrUpdate(blog);
+		sessionFactory.getCurrentSession().saveOrUpdate(forum);
 		System.out.println("Insertion successful");
 		return true;
 		}
@@ -36,39 +33,39 @@ public class BlogDAOImpl implements BlogDAO
 		catch(Exception e)
 		{
 		System.out.println("Exception Arised:"+e);
+	
 		return false;
-		}
-		
 	}
-
+	}
+	
 	@Override
-	public Blog getBlog(int blogId) {
+	public Forum getForum(int forumId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Blog> getBlogs() {
+	public List<Forum> getForums() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean approveBlog(Blog blog) {
+	public boolean approveForum(Forum forum) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean editBlog(int blogid) {
+	public boolean editForum(int forumid) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean deleteBlog(int blogId) {
+	public boolean deleteForum(int forumId) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
 }

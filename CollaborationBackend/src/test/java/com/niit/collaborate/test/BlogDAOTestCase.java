@@ -19,17 +19,22 @@ public class BlogDAOTestCase
 	@BeforeClass
 	public static void initalize()
 	{
-		AnnotationConfigApplicationContext annotationConfigAppContext=new AnnotationConfigApplicationContext ();
+		System.out.println("Starting into Initializaed Blog Test case ");
+		
+		AnnotationConfigApplicationContext annotationConfigAppContext=new AnnotationConfigApplicationContext();
 		annotationConfigAppContext.scan("com.niit.collaborate");
 		annotationConfigAppContext.refresh();
 		
 		blogDAO=(BlogDAO)annotationConfigAppContext.getBean("blogDAO");
-		
+	
+		System.out.println("Ending into Initializaed Blog Test case ");
 	}
 
 	@Test
 	public void createBlogTest() 
 	{
+		
+		System.out.println("Starting into Creating Blog Test case ");
 		Blog blog=new Blog();
 		
 		blog.setBlogId(1001);
@@ -42,6 +47,7 @@ public class BlogDAOTestCase
 		
 		assertTrue("Problem in blog creation",blogDAO.createBlog(blog));
 		
+		System.out.println("Ending... into  Create Blog Test case ");
 	}
 
 }

@@ -1,0 +1,4 @@
+com\niit\collaborate\dao\BlogDAO.class
+com\niit\collaborate\model\Blog.class
+com\niit\collaborate\dao\BlogDAOImpl.class
+com\niit\collaborate\config\DBConfig.class
