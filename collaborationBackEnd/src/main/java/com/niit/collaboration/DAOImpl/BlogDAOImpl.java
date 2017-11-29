@@ -37,7 +37,7 @@ private static final Logger log = LoggerFactory.getLogger(BlogDAOImpl.class);
 			ex.printStackTrace();
 		}
 	}
-	
+	 
 	@Transactional
 	public boolean addBlog(Blog blog)
 	{

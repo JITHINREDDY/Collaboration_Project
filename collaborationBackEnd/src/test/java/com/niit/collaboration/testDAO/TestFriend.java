@@ -73,11 +73,14 @@ public class TestFriend
 		}
 		else
 		{
-//			System.out.println(list.get(0));
+			System.out.println(list.get(0));
 			for(int i = 0; i<list.size(); i++)
+			{
 				System.out.println(list.get(i).getFriendFName());
-//				System.out.println("Friend Name - "+list.get(i).getFriendID()+list.get(i).getUserID());
+				System.out.println("Friend Name - "+list.get(i).getFriendID()+list.get(i).getUserID());
+		    }
 		}
+		
 	}
 	
 	public void removeFriend()
@@ -108,11 +111,11 @@ public class TestFriend
 	public static void main(String[] args) 
 	{
 		TestFriend test = new TestFriend();
-//		test.addFriend();
+	test.addFriend();
 //		test.acceptFriend();
 //		test.removeFriend();
-//		test.getFriendList();
+		//test.getFriendList();
 //		test.setOnline();
-		test.setOffline();
+//		test.setOffline();
 	}
 }

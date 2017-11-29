@@ -2,8 +2,8 @@ package com.niit.collaboration.DAOImpl;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
 import org.hibernate.Query;
+import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.collaboration.DAO.UserDAO;
 import com.niit.collaboration.model.User;
 
-@SuppressWarnings("deprecation")
 @Repository("userDAO")
 @EnableTransactionManagement
 public class UserDAOImpl implements UserDAO
@@ -65,23 +64,23 @@ public class UserDAOImpl implements UserDAO
 			User user =  sessionFactory.getCurrentSession().get(User.class, userName);
 			if(user.getPassword().equals(password))
 			{
-				user.setErrorCode("200");
-				user.setErrorMsg("User Found");
+//				user.setErrorCode("200");
+//				user.setErrorMsg("User Found");
 				log.info("Valid User");
 				return true;
 			}
 			else
 			{
-				user.setErrorCode("100");
-				user.setErrorMsg("Password is incorrect");
+				//user.setErrorCode("100");
+				//user.setErrorMsg("Password is incorrect");
 				log.info("Invalid password");
 				return false;
 			}
 		} catch(Exception ex)
 		{
 			User user = new User();
-			user.setErrorCode("100");
-			user.setErrorMsg("Username not found");
+//			user.setErrorCode("100");
+//			user.setErrorMsg("Username not found");
 			log.error("Username Not found in database");
 			return false;
 		}
@@ -94,16 +93,16 @@ public class UserDAOImpl implements UserDAO
 		try
 		{
 			User user =  sessionFactory.getCurrentSession().get(User.class, userName);
-			user.setErrorCode("200");
-			user.setErrorMsg("User Found");
+//			user.setErrorCode("200");
+//			user.setErrorMsg("User Found");
 			return user;
 		}
 		catch(Exception ex)
 		{
 			User user = new User();
 			ex.printStackTrace();
-			user.setErrorCode("404");
-			user.setErrorMsg("User Not Found");
+//			user.setErrorCode("404");
+//			user.setErrorMsg("User Not Found");
 			return null;
 		}
 	}
@@ -135,5 +134,4 @@ public class UserDAOImpl implements UserDAO
 			ex.printStackTrace();
 			return false;
 		}
-	}
-}
+	}}

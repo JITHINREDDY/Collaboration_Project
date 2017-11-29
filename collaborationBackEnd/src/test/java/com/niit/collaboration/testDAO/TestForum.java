@@ -1,6 +1,5 @@
 package com.niit.collaboration.testDAO;
 
-import java.util.Date;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -10,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.collaboration.DAO.ForumDAO;
-import com.niit.collaboration.DAO.ForumReplyDAO;
 import com.niit.collaboration.model.Forum;
-import com.niit.collaboration.model.ForumReply;
 import com.niit.collaboration.util.Date_Time;
 
 public class TestForum 
@@ -141,12 +138,12 @@ public class TestForum
 	public static void main(String[] args) 
 	{
 		TestForum test = new TestForum();
-//		test.addForum();
+		test.addForum();
 //		test.updateForum();
 //		test.deleteForum();
 //		test.getForum();
 //		test.accept();
-		test.listUserForum();
+//		test.listUserForum();
 //		test.listAllForums();
 //		test.viewApprovedForums();
 	}

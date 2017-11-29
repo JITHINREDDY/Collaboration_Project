@@ -77,8 +77,8 @@ public class TestForumReply
 	public static void main(String[] args) 
 	{
 		TestForumReply tc = new TestForumReply();
-//		tc.forumAddReply();
+		tc.forumAddReply();
 //		tc.deleteReply();
-		tc.GetReplies();
+	//	tc.GetReplies();
 	}
 }

@@ -25,6 +25,8 @@ import com.niit.collaboration.model.Job;
 import com.niit.collaboration.model.JobApplied;
 import com.niit.collaboration.model.User;
 
+
+
 @Configuration
 @ComponentScan("com.niit")
 @EnableTransactionManagement
@@ -49,7 +51,7 @@ public class ApplicationContextConfiguration
 			
 			properties.put("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 			properties.put("hibernate.show_sql", "true");
-     		properties.put("hibernate.hbm2ddl.auto", "update");
+      		properties.put("hibernate.hbm2ddl.auto", "update");
 			
 			return properties;
 		}
@@ -62,15 +64,15 @@ public class ApplicationContextConfiguration
 			
 			sessionBuilder.addProperties(getHibernateProperties());
 			sessionBuilder.addAnnotatedClass(User.class);
-			sessionBuilder.addAnnotatedClass(Blog.class);
-			sessionBuilder.addAnnotatedClass(Job.class);
-			sessionBuilder.addAnnotatedClass(JobApplied.class);
-			sessionBuilder.addAnnotatedClass(Event.class);
+     		sessionBuilder.addAnnotatedClass(Blog.class);
+		sessionBuilder.addAnnotatedClass(Job.class);
+		sessionBuilder.addAnnotatedClass(JobApplied.class);
+		sessionBuilder.addAnnotatedClass(Event.class);
 			sessionBuilder.addAnnotatedClass(BlogComment.class);
 			sessionBuilder.addAnnotatedClass(Forum.class);
 			sessionBuilder.addAnnotatedClass(ForumReply.class);
 			sessionBuilder.addAnnotatedClass(Friend.class);
-			sessionBuilder.addAnnotatedClass(FileUpload.class);
+      		sessionBuilder.addAnnotatedClass(FileUpload.class);
 			
 			return sessionBuilder.buildSessionFactory();
 		}

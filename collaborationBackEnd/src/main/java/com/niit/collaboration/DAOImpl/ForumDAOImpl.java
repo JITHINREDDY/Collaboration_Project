@@ -69,7 +69,7 @@ public class ForumDAOImpl implements ForumDAO
 		log.info("Entering add forum");
 		try
 		{
-			forum.setId(getMaxId()+1);
+			//forum.setId(getMaxId()+1);
 			forum.setStatus('P');
 			sessionFactory.getCurrentSession().save(forum);
 			log.info("Forum has been added "+forum.getForum_id());
@@ -124,6 +124,8 @@ public class ForumDAOImpl implements ForumDAO
 		try
 		{
 			Forum forum =  sessionFactory.getCurrentSession().get(Forum.class, id);
+			
+			
 			forum.setErrorCode("200");
 			forum.setErrorMsg("Forum Found");
 			log.info("Forum found");

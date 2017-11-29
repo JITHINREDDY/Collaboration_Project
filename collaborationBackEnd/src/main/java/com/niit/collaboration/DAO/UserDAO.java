@@ -16,5 +16,5 @@ public interface UserDAO
 	public List<User> getUserList();
 	
 	public boolean deleteUser(User user);
-	
+
 }

@@ -76,9 +76,9 @@ public class TestComment
 	public static void main(String[] args)
 	{
 		TestComment tc = new TestComment();
-//		tc.addBlogComment();
+		tc.addBlogComment();
 //		tc.deleteComment();
-		tc.list();
+	//	tc.list();
 		System.out.println("Success");
 	}
 }

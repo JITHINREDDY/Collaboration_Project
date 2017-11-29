@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,45 +29,47 @@ public class TestUser
 	
 	public TestUser()
 	{
-		
-		context = new AnnotationConfigApplicationContext();
+		System.out.println("TeestUser");
+	   	context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit.collaboration");
 		context.refresh();
 
 		userDAO = (UserDAO) context.getBean("userDAO");
 		user = (User) context.getBean("user");
-		
+		System.out.println("endtuser");
 	}
-	
+
 	public void testAdd()
 	{
+	System.out.println("add method");
 		log.info("Add User Test started");
 		
-		user.setUsername("admin");
-		user.setFirst_name("Test");
-		user.setLast_name("");
+		user.setUsername("jithin");
+		user.setFirst_name("jithin");
+		user.setLast_name("reddy");
 		user.setDob(new Date());
-		user.setGender('F');
-		user.setMail_id("admin@gmail.com");
-		user.setPassword("admin");
+		user.setGender('M');
+		user.setMail_id("jtn@gmail.com");
+		user.setPassword("jithin");
 		user.setStatus('Y');
 		user.setRole("ADMIN");
 		
 		userDAO.addUser(user);
 		log.info("Add User Test end");
+		System.out.println("eofadd");
 	}
 	
 	public void getUserDetails()
 	{
 		log.info("Get User Details Started");
-		String userName = "SRINU";
+		String userName = "testuser";
 		user = userDAO.getUser(userName);
 		System.out.println("Name - "+user.getFirst_name());
 		System.out.println("Date - "+user.getDob());
 		DateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
 	       Date dateobj = user.getDob();
-	       String datetime = df.format(dateobj).toString();
-	       System.out.println("Date - "+datetime);
+	      String datetime = df.format(dateobj).toString();
+	      System.out.println("Date - "+datetime);
 		log.info("Get User Ended");
 	}
 	
@@ -74,7 +77,7 @@ public class TestUser
 	{
 		log.info("Validate User Started");
 		String userName = "testuser";
-		String password = "student";
+		String password = "kaustubhnk";
 		boolean value = userDAO.validateUser(userName, password);
 		if(value)
 			System.out.println("Valid");
@@ -107,11 +110,11 @@ public class TestUser
 	{
 		TestUser tuser = new TestUser();
 		tuser.testAdd();
-//		tuser.getUserDetails();
-//		tuser.validateUser();
-//		tuser.deleteUser();
-//		tuser.list();
-		
-		System.out.println("Success");
+	//	tuser.getUserDetails();
+	//	tuser.validateUser();
+	//	tuser.deleteUser();
+	//	tuser.list();
+//		
+	System.out.println("Success");
 	}
 }

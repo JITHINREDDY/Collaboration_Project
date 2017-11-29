@@ -88,8 +88,8 @@ public class TestJobApplied
 	public static void main(String[] args) 
 	{
 		TestJobApplied tj = new TestJobApplied();
-//		tj.addJob();
+	tj.addJob();
 //		tj.getListbyUser();
-		tj.getListbyJob();
+//		tj.getListbyJob();
 	}
 }

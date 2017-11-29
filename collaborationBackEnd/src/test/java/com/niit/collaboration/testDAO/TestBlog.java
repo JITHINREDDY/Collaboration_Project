@@ -60,7 +60,7 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 		blog.setUsername("Admin");
 		blog.setDate_time("DATE_TIME");
 		blog.setStatus("Approved");
-		blogDAO.approveBlog(blog);
+		//blogDAO.approveBlog(blog);
 		System.out.println("Approved Success");
 	}
 	
@@ -149,8 +149,8 @@ Logger log = LoggerFactory.getLogger(TestUser.class);
 	public static void main(String[] args) 
 	{
 		TestBlog tb = new TestBlog();
-	//tb.addBlog();
-		tb.getAll();
+		tb.addBlog();
+		//tb.getAll();
 //		tb.approveBlog();
 //		tb.updateBlog();	
 	//	tb.getBlog();
