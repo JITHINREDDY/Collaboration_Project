@@ -4,6 +4,7 @@
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
+<title> </title>
 <script src="js/jquery-3.2.0.min.js"></script>
 <script src="lib/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.css">
@@ -18,7 +19,7 @@ body
 	background-attachment: fixed;
 }
 </style>
-<title>Welcome to Collab Space</title>
+<title> Welcome to Collab Space</title>
 <style type="text/css">
 .navbar-inverse
 {
@@ -42,9 +43,9 @@ body
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <ul class="nav navbar-nav navbar-left">
-      			<li><a href="#/"><img alt="CB" src="" height="20" width="30"></a></li>
-      			<li><font style="font-size: 35px"><a class="navbar-brand" style="color: orange;" href="#/">
-      			<strong>Collab Space</strong></a></font></li>
+      			<li><a href="#/"><img alt="LOGO" src="images/" height="20" width="40"></a></li>
+      			<li><font style="font-size: 9000px"><a class="navbar-brand" style="color: green;" href="#/">
+      			<strong>COLLAB SPACE</strong></a></font></li>
    	  </ul>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -59,32 +60,32 @@ body
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
       		<li data-ng-if="currentUser.role=='ADMIN'">
-				<a style="color: white" href="#/admin">MANAGE WEBSITE</a></li>
+				<a style="color: white" href="#/admin">ADMIN PAGE</a></li>
      		<li data-ng-show="currentUser.username">
      			<img data-ng-src="images/{{currentUser.username}}" onerror="this.src='images/profilepic.png'" class="img-circle" height="35" width="35"></li>
      		<li data-ng-show="currentUser.username">
 				<a style="color: white" href="#/myProfile"> Welcome, {{currentUser.first_name}}</a></li>
 			<li data-ng-show="!currentUser.username">
-				<a style="color: white" href="#/login"><span class="glyphicon glyphicon-log-in"></span> LOGIN</a></li>
+				<a style="color: white" href="#/login"><span class="glyphicon glyphicon-log-in"></span> SIGN IN</a></li>
 			<li data-ng-show="currentUser.username">
 				<a style="color: white" href="" data-ng-click = "ctrl.logout()"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
 			<li data-ng-show="!currentUser.username">
-				<a style="color: white" href="#/register"><span class="glyphicon glyphicon-user"></span> SIGN UP</a></li>
+				<a style="color: white" href="#/register"><span class="glyphicon glyphicon-user"></span>SIGN UP</a></li>
 			
 	</ul>
-<!--       <form class="navbar-form navbar-left"> -->
-<!--         <div class="form-group"> -->
-<!--           <input type="text" class="form-control" placeholder="Search"> -->
-<!--         </div> -->
-<!--         <button type="submit" class="btn btn-default">Submit</button> -->
-<!--       </form> -->
+<!--      <form class="navbar-form navbar-left"> --> 
+<!--        <div class="form-group"> --> 
+<!--          <input type="text" class="form-control" placeholder="Search">  --> 
+<!--        </div> --> 
+<!--        <button type="submit" class="btn btn-default">Submit</button> --> 
+<!--     </form> --> 
       <ul class="nav navbar-nav navbar-left">
         <li><a style="color: white" href="#/viewBlogs">BLOGS</a></li>
        	<li><a style="color: white" href="#/viewForums">FORUMS</a></li>
        	<li><a style="color: white" href="#/viewJobs">JOBS</a></li>
        	<li><a style="color: white" href="#/viewEvents">EVENTS</a></li>
        	<li data-ng-show="currentUser.username">
-				<a style="color: white" href="#/viewUsers"><span class="glyphicon glyphicon-user"></span>SEARCH USERS</a></li>
+				<a style="color: white" href="#/viewUsers"><span class="glyphicon glyphicon-user"></span>FIND USERS</a></li>
 	 </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -100,7 +101,7 @@ body
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     	
-   	<marquee width="1400px" behavior="slide" direction="left" scrollamount="7"><h6>NIIT Inc..</h6></marquee>
+   	<marquee width="500px" behavior="slide" direction="left" scrollamount="7"><h6>2017</h6></marquee>
   	<ul class="nav navbar-nav navbar-right">
         <li class="dropup">
           <a style="color: white;" class="dropdown-toggle" data-toggle="dropdown" href="">Chat<span class="caret"></span></a>
@@ -124,8 +125,8 @@ body
             </table>
            	
             </li>
-<!--             <li role="separator" class="divider"></li> -->
-<!--             <li><a href="#">Separated link</a></li> -->
+<!--             <li role="separator" class="divider"></li>-->
+<!--            <li><a href="#">Separated link</a></li> -->
           </ul>
         </li>
       </ul>
@@ -135,7 +136,7 @@ body
 
 </body>
 
-<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script> -->
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
 <script src="js/angular.min.js"></script>
 <script src="js/angular-route.js"></script>
@@ -165,32 +166,4 @@ body
 
 <script src="C_chat/ChatController.js"></script>
 <script src="C_chat/ChatService.js"></script>
-
-<body>
-<div class="navbar navbar-default navbar-fixed-bottom">
-		<div class="container-fluid">
-			<div class="navbar-text pull-left">
-				<p>&copy; 2017 Jithin Reddy </p>
-			</div>
-			<div class="navbar-text noStyle pull-right">
-				<a href="https://www.facebook.com/jithinreddy15" target="_blank">
-					<i class="fa fa-facebook fa-2x"></i>
-				</a>
-				<a href="https://twitter.com/jithinreddy15" target="_blank">
-					<i class="fa fa-twitter fa-2x"></i>
-				</a>
-				<a href="http://linkedin.com/in/jithinreddy15" target="_blank">
-					<i class="fa fa-linkedin fa-2x"></i>
-				</a>
-				<a href="https://plus.google.com/u/0/+JithinReddy15" target="_blank">
-					<i class="fa fa-google-plus fa-2x"></i>
-				</a>
-				<a href="https://github.com/JITHINREDDY" target="_blank">
-					<i class="fa fa-github fa-2x"></i>
-				</a>
-			</div>
-
-		</div>
-	</div>
-</body>
 </html>

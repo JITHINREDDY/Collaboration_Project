@@ -1,7 +1,7 @@
 app.factory('EventService', function($http, $q, $rootScope)
 {
 	console.log("Entering Event Service")
-	var BASE_URL = "http://localhost:8088/collaborationControllers/"
+	var BASE_URL = "http://localhost:8079/collaborationControllers/"
 	return{
 		
 	listEvents: function()

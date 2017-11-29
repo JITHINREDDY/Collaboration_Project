@@ -1,7 +1,7 @@
 app.factory('AdminService', function($http, $q, $rootScope)
 {
 	console.log("Admin Service")
-	var BASE_URL = "http://localhost:8088/collaborationControllers/"
+	var BASE_URL = "http://localhost:8079/collaborationControllers/"
 	return {
 
 		listAllForums: function()
@@ -10,7 +10,7 @@ app.factory('AdminService', function($http, $q, $rootScope)
 			return $http.get(BASE_URL + "viewAllForums")
 			.then(function(response)
 				{
-//					console.log(response.data)
+				console.log(response.data)//
 					console.log("Recieved All Forums "+response.status)
 					return response;
 				})

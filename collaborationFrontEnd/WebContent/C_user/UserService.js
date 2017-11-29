@@ -1,7 +1,7 @@
 app.factory('UserService', function($http, $q, $rootScope)
 {
 	console.log("Entering UserService")
-	var BASE_URL = "http://localhost:8088/collaborationControllers/"
+	var BASE_URL = "http://localhost:8079/collaborationControllers/"
 		return{
 	//var userService = this;
 	
@@ -127,7 +127,7 @@ app.factory('UserService', function($http, $q, $rootScope)
 		return $http.get(BASE_URL + "getUserList")
 		.then(function(response)
 			{
-//				console.log(response.data)
+			console.log(response.data)//
 				console.log("Recieved List Users "+response.status)
 				return response.data
 	
